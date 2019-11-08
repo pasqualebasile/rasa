@@ -1,1 +1,1 @@
-docker build --force-rm -t rasa-it .
+docker build -f italian.Dockerfile --force-rm -t rasa-it .

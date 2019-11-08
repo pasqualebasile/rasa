@@ -1,4 +1,16 @@
-# Fork from RasaHQ/rasa
+# Rasa Fork
+Lo scopo è quello di avere un docker di Rasa basato sull'ultima build ma orientato all'italiano.
+Questo implica modifiche sul Dockerfile - rinominato `italian.Dockerfile` - e ad altri elementi che saranno individuati man mano.
+È stato anche predisposto uno script `build.sh` per creare la build rapidamente.
+
+## TODO
+Allo stato attuale c'è ancora da verificare gli elementi seguenti:
+- [ ] `RUN pip install --no-cache-dir -r alt_requirements/requirements_pretrained_embeddings_spacy.txt`
+- [ ] `VOLUME ["/app"]` Non c'è nella fonte originale attuale, ma c'era in precedenza. L'obiettivo è quello di esporre la
+parte applicativa in un volume esterno
+- [ ]  
+
+## Fork from RasaHQ/rasa
 Per poter mantenere allineato il forked con l'originale occorre procedere come descritto nelle [istruzioni](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/merging-an-upstream-repository-into-your-fork)
 Idealmente sarebbe stato opportuno avere un branch `source` in modo da tenere il forked su master secondo le evoluzioni desiderate.
 Quindi, avendo adottato questo criterio, le istruzioni diventano:
@@ -6,10 +18,10 @@ Quindi, avendo adottato questo criterio, le istruzioni diventano:
 1. Nella copia locale eseguire `git checkout source`
 2. Effettuare il pull su questa branch
 ```shell script
-git pull https://github.com/RasaHQ/rasa.git original
+git pull https://github.com/RasaHQ/rasa.git master
 ```
 3. Effettuare il successivo merge su master 
-4. Alla fine effettuare il `push origin original` e `push origin source` 
+4. Alla fine effettuare il `push origin source` e `push origin master` 
 
 
 # Rasa (formerly Rasa Core + Rasa NLU)
